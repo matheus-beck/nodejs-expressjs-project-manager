@@ -1,5 +1,5 @@
 # project-manager
-Project manager backend developed using Node.js and Express.js. Built as the first challenge of the GoStack Bootcamp from RocketSeat.
+Project manager backend developed using Node.js and Express.js. Built as the first challenge of the GoStack Bootcamp from RocketSeat. This CRUD handles a local array of projects that simulates our database.
 
 Clone the project into your machine and run:
 ```console
