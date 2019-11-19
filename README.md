@@ -1,54 +1,31 @@
 # project-manager
 Project manager backend developed using Node.js and Express.js. Built as the first challenge of the GoStack Bootcamp from RocketSeat. This CRUD handles a local array of projects that simulates our database.
 
-Clone the project into your machine and run:
-```console
-npm install
-```
-or
+## Getting started
+
+1. Clone the project into your machine and run:
 ```console
 yarn install
 ```
 
-and to run the server: 
+2. To run the server: 
 
 ```console
 yarn dev
 ```
-# Desafio 01. Conceitos do NodeJS
 
-Crie uma aplicação do zero utilizando Express.
+## Routes
 
-Essa aplicação será utilizada para armazenar projetos e suas tarefas.
+- `POST /projects`: The route should receive` id` and `title` within the body of registering a new project within an array in the following format:` {id: "1", title: 'New project', tasks: []} `; Be sure to submit both the project ID and project title in double-quoted string format.
 
-## Rotas
+- `GET /projects`: Route that lists all projects and their tasks;
 
-- `POST /projects`: A rota deve receber `id` e `title` dentro corpo de cadastrar um novo projeto dentro de um array no seguinte formato: `{ id: "1", title: 'Novo projeto', tasks: [] }`; Certifique-se de enviar tanto o ID quanto o título do projeto no formato string com àspas duplas.
+- `PUT /projects/:id`: The route will only change the project title with the` id` present in the route parameters;
 
-- `GET /projects`: Rota que lista todos projetos e suas tarefas;
+- `DELETE /projects/:id`: The route will delete the project with the` id` present in the route parameters;
 
-- `PUT /projects/:id`: A rota deve alterar apenas o título do projeto com o `id` presente nos parâmetros da rota;
+- `POST /projects/:id/tasks`: The route will receive a` title` field and store a new task in the task array of a specific project chosen through the `id` present in the route parameters;
 
-- `DELETE /projects/:id`: A rota deve deletar o projeto com o `id` presente nos parâmetros da rota;
+---
 
-- `POST /projects/:id/tasks`: A rota deve receber um campo `title` e armazenar uma nova tarefa no array de tarefas de um projeto específico escolhido através do `id` presente nos parâmetros da rota;
-
-### Exemplo
-
-Se eu chamar a rota `POST /projects` repassando `{ id: 1, title: 'Novo projeto' }` e a rota `POST /projects/1/tasks` com `{ title: 'Nova tarefa' }`, meu array de projetos deve ficar assim:
-
-```js
-[
-  {
-    id: "1",
-    title: 'Novo projeto',
-    tasks: ['Nova tarefa']
-  }
-]
-```
-
-## Middlewares
-
-- Crie um middleware que será utilizado em todas rotas que recebem o ID do projeto nos parâmetros da URL que verifica se o projeto com aquele ID existe. Se não existir retorne um erro, caso contrário permita a requisição continuar normalmente;
-
-- Crie um middleware global chamado em todas requisições que imprime (`console.log`) uma contagem de quantas requisições foram feitas na aplicação até então;
+Made with ❤️ and ☕ by Matheus Beck :wave: [Get in touch!](https://www.linkedin.com/in/matheus-beck/)
